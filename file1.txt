@@ -1,3 +1,7 @@
 a=1
-hoge
 b=2
+let c=$a+$b
+echo $c
+# This is a debug line
+echo $a
+echo $b
