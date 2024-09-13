@@ -1,7 +1,0 @@
-a=1
-b=2
-let c=$a+$b
-echo $c
-# This is a debug line
-echo $a
-echo $b
