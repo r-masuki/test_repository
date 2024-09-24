@@ -11,23 +11,23 @@ jobs:
           sed 's|\[dvipdfmx\]||g' main1/main1.tex > main1/main1.tex && \
           sed 's|\[dvipdfmx\]||g' main2/main2.tex > main2/main2.tex && \
           cat main1/main1.tex
-      - name: Compile LaTeX document
+      - name: Compile LaTeX document1
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main1/main1.tex
-      - name: Upload PDF file
+      - name: Upload PDF file1
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
+          name: PDF1
           path: main1.pdf
-      - name: Compile LaTeX document
+      - name: Compile LaTeX document2
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main2/main2.tex
-      - name: Upload PDF file
+      - name: Upload PDF file2
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
+          name: PDF2
           path: main2.pdf
 
 
