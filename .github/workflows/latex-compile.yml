@@ -8,8 +8,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Edit tex files for the Github actions
         run:  |
-          sed 's|\[dvipdfmx\]||g' main1/main1.tex > main1/main1.tex && \
-          sed 's|\[dvipdfmx\]||g' main2/main2.tex > main2/main2.tex && \
+          sed 's|\[dvipdfmx\]||g' main1/main1.tex > main1/main1_tmp.tex && \
+          mv main1/main1_tmp.tex main1/main1.tex
+          sed 's|\[dvipdfmx\]||g' main2/main2.tex > main2/main2_tmp.tex && \
+          mv main2/main2_tmp.tex main2/main2.tex
           cat main1/main1.tex
       - name: Compile LaTeX document1
         uses: xu-cheng/latex-action@v3
