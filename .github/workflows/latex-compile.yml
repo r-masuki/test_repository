@@ -12,11 +12,12 @@ jobs:
           mv main1/main1_tmp.tex main1/main1.tex
           sed 's|\[dvipdfmx\]||g' main2/main2.tex > main2/main2_tmp.tex && \
           mv main2/main2_tmp.tex main2/main2.tex
-          cd main1
       - name: Compile LaTeX document1
         uses: xu-cheng/latex-action@v3
         with:
+          pre_compile: "cd main1"
           root_file: main1.tex
+          post_compile: "cd ../"
       - name: Upload PDF file1
         uses: actions/upload-artifact@v4
         with:
