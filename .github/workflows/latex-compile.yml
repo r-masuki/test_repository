@@ -12,16 +12,18 @@ jobs:
           mv main1/main1_tmp.tex main1/main1.tex
           sed 's|\[dvipdfmx\]||g' main2/main2.tex > main2/main2_tmp.tex && \
           mv main2/main2_tmp.tex main2/main2.tex
-          cat main1/main1.tex
+          cd main1
       - name: Compile LaTeX document1
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main1/main1.tex
+          root_file: main1.tex
       - name: Upload PDF file1
         uses: actions/upload-artifact@v4
         with:
           name: PDF1
           path: main1.pdf
+      - name: Return to original directory
+        run: cd ../
       - name: Compile LaTeX document2
         uses: xu-cheng/latex-action@v3
         with:
